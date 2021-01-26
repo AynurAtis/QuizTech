@@ -16,18 +16,23 @@
 	
 	<div class="topnav" id="myTopnav">
 		  <a href="#home" class="active"><i class="fa fa-fw fa-home"></i>Home</a>
-		  <a href="#news"><i class="fa fa-fw fa-newspaper-o"></i> News</a>
-		  <a href="#contact"><i class="fa fa-fw fa-envelope"></i>Contact</a>
-		  <div class="dropdown">
-			 <button  onclick="myFunctionx()" class="dropbtn"><i class="fa fa-fw fa-users"></i> About</button>
+		  <a href="#contact" onclick="document.getElementById('id04').style.display='block'"><i class="fa fa-fw fa-envelope"></i>Contact</a>
+			<div class="dropdown">
+			 <button  onclick="myFunctionx()" class="dropbtn"><i class="fa fa-fw fa-address-card"></i> About</button>
 			  <div id="myDropdown" class="dropdown-content">
-				  <a href="#">Link 1</a>
-				  <a href="#">Link 2</a>
-				  <a href="#">Link 3</a>
+				  <a href="#"><i class="fa fa-fw fa-file"></i>Documents</a>
+				  <a href="#"><i class="fa fa-fw fa-users"></i>Our Team</a>
 			  </div>
-		  </div> 				
-		  <a href="#Login"><i class="fa fa-fw fa-sign-in"></i> Log In</a>
-		  <a href="#"><i class="fa fa-fw fa-user-plus"></i> Sign Up</a>
+		  	</div>
+			<div class="dropdown">
+				<button  onclick="myFunctionx()" class="dropbtn"><i class="fa fa-fw fa-puzzle-piece"></i> Game</button>
+				<div id="myDropdown" class="dropdown-content">
+					<a href="#" onclick="document.getElementById('id03').style.display='block'"><i class="fa fa-fw fa-plus-square"></i> Create</a>
+					<a href="#"><i class="fa fa-fw fa-gamepad"></i> Play</a>
+				</div>
+			</div>
+		  <a href="#" onclick="document.getElementById('id01').style.display='block'" ><i class="fa fa-fw fa-sign-in" id="log-in"></i> Log In</a>
+		  <a href="#" onclick="document.getElementById('id02').style.display='block'"><i class="fa fa-fw fa-user-plus"></i> Sign Up</a>
 		  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
 		<i class="fa fa-bars"></i>
 		  </a>
@@ -43,9 +48,9 @@
 					<div class="column" >
 					  <div class="panel panel-purple"> 
 						  	<div class="content-container"> 
-								<h2>Make learning awesome!</h2>
-								<p>Kahoot! delivers engaging learning to billions. </p>
-								<button class="button button1">PLAY</button>
+								<h2>Start testing your knowledge:</h2>
+								<p>Learn by having fun</p>
+								<button class="button button1" style="width: 50%;">PLAY</button>
 							</div>
 						  		<div class="image-container"></div>	
 					  </div>
@@ -54,9 +59,10 @@
 				  <div class="column" >
 						<div class="panel panel-blue"> 
 						  	<div class="content-container"> 
-								<h2>Make learning awesome!</h2>
-								<p>Kahoot! delivers engaging learning to billions. </p>
-								<button class="button button1">CREATE</button>
+								<h2>To avoid being a boring teacher:</h2>
+								<p>Have attention while teaching.</p>
+								<button class="button button1" style="width: 50%;" 
+								onclick="document.getElementById('id03').style.display='block'">CREATE</button>
 							</div>
 						  	<div class="image-container "></div>
 						</div>
@@ -66,9 +72,9 @@
 					<div class="column" >
 					  <div class="panel panel-red"> 	
 						  	<div class="content-container"> 
-								<h2>Make learning awesome!</h2>
-								<p>Kahoot! delivers engaging learning to billions. </p>
-								<button class="button button1">SIGN UP</button>
+								<h2>First you have to remind yourself to us:</h2>
+								<p>Welcome back! Good to see you again.</p>
+								<button class="button button1" style="width: 50%;" onclick="document.getElementById('id02').style.display='block'">SING UP</button>
 							</div>
 						  	<div class="image-container "></div>
 					  </div>
@@ -77,15 +83,135 @@
 				  <div class="column" >
 						<div class="panel panel-pink"> 
 						  	<div class="content-container"> 
-								<h2>Make learning awesome!</h2>
-								<p>Kahoot! delivers engaging learning to billions. </p>
-								<button class="button button1">LOG IN</button>
+								<h2>To start you need to join us:</h2>
+								<p>In Quiztech, you win even if you lose </p>
+								<button class="button button1" style="width: 50%;" onclick="document.getElementById('id01').style.display='block'">LOG IN</button>
 							</div>
 						  	<div class="image-container "></div>
 				 </div>				
 		</div>				
 
 	</div>
+
+
+	<!-- login screen-->
+	<div id="id01" class="modal" style="color: black;">
+		<form class="modal-content animate" action="/action_page.php" method="post">
+		  <div class="imgcontainer">
+			<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+			<img src="img/img_avatar2.png" alt="Avatar" class="avatar">
+		  </div>
+	  
+		  <div class="container">
+			<label for="uname"><b>Username</b></label>
+			<input type="text" placeholder="Enter Username" name="uname" required>
+	  
+			<label for="psw"><b>Password</b></label>
+			<input type="password" placeholder="Enter Password" name="psw" required>
+			  
+			<button type="submit">Login</button>
+			<label style="color: black;">
+			  <input type="checkbox" checked="checked" name="remember" style="color: black;"> Remember me
+			</label>
+		  </div>
+	  
+		  <div class="container" style="background-color:#f1f1f1">
+			<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+			<span class="psw">Forgot <a href="#" >password?</a></span>
+		  </div>
+		</form>
+	  </div>
+
+
+
+
+	  	<!-- sign up screen-->
+	  <div id="id02" class="modal" >
+		<form class="modal-content" action="/action_page.php">
+			<span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+		  <div class="container" style="color: black;">
+			<h1 style="color: black;">Sign Up</h1>
+			<p style="color: black;">Please fill in this form to create an account.</p>
+			<hr>
+			<label for="email"><b>Email</b></label>
+			<input type="text" placeholder="Enter Email" name="email" required>
+	  
+			<label for="psw"><b>Password</b></label>
+			<input type="password" placeholder="Enter Password" name="psw" required>
+	  
+			<label for="psw-repeat"><b>Repeat Password</b></label>
+			<input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+			
+			<label>
+			  <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+			</label>
+	  
+			<p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+	  
+			<div class="clearfix">
+			  <button type="submit" class="signupbtn">Sign Up</button>
+			  <button type="button" onclick="document.getElementById('id02').style.display='none'; " class="cancelbtn">Cancel</button>
+
+			</div>
+		  </div>
+		</form>
+	  </div>
+
+
+
+<!--crate quiz you have to login-->
+<!-- The Modal of  -->
+<div id="id03" class="modal">
+
+	<!-- Modal content -->
+	<div class="modal-content">
+	  <span class="close">&times;</span>
+	  <p style="color: black;">You have to register to create quiz!</p>
+	  <button class="button button1" style="width: 40%;" onclick="document.getElementById('id02').style.display='block'; document.getElementById('id03').style.display='none';">SING UP</button>
+	  <p style="color: black;">OR</p>
+	  <button class="button button1" style="width: 40%;" onclick="document.getElementById('id01').style.display='block'; document.getElementById('id03').style.display='none';">LOG IN</button>
+
+	</div>
+  
+  </div>
+  
+
+
+
+
+	<!-- contact screen-->
+	<div id="id04" class="modal"  >
+		<form class="modal-content" action="/action_page.php" 
+		style="border-radius: 25px;">
+			<span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
+		  <div class="container" style="color: black;text-align: left; padding-top: 30px; border-radius: 25px;">
+			<label for="fname">First Name</label>
+			<input type="text" id="fname" name="firstname" placeholder="Your name..">
+			<label for="lname">Last Name</label>
+			<input type="text" id="lname" name="lastname" placeholder="Your last name..">
+			<label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option value="complaint">Complaint</option>
+              <option value="advice">Advice</option>
+              <option value="other">Other</option>
+            </select>
+			<label for="subject">Subject</label>
+			<textarea id="subject" name="subject" placeholder="Write something.." style="height:120px"></textarea>
+			<input type="submit" value="Submit" >
+			<div class="clearfix">
+			  <button type="button" onclick="document.getElementById('id04').style.display='none'; " class="cancelbtn" >Cancel</button>
+			</div>
+		  </div>
+		</form>
+	  </div>
+
+
+
+
+
+
+<!--end of container-->
 </div>				
 
 		
@@ -127,59 +253,59 @@
 		
 	</div>	
 	
+
 	<footer class="footer">
 
-		
+
 		<div class="inner">
 				<div class="footer-left">
 						<div class="footer-logo"><img src="img/logo.png" width="140" alt="logo" > </div>
 						<h5> FOLLOW US!</h5>
 
-						<div class="footer_social">					
-									
-										
+						<div class="footer_social">
+
+
 						 			<a  class="footer-social-link" href="#" itemprop="url"><li class="fa fa-fw fa-twitter"></li></a>
 									<a  class="footer-social-link" href="#" itemprop="url"><li class="fa fa-fw fa-facebook"></li></a>
 									<a  class="footer-social-link" href="#" itemprop="url"><li class="fa fa-fw fa-linkedin"></li></a>
 									<a  class="footer-social-link" href="#" itemprop="url"><li class="fa fa-fw fa-instagram"></li> </a>
-							
-							
-						</div>											
-				</div>	
-			
-				<div class="footer-right">								
-						<div class="footer-list">									
+
+
+						</div>
+				</div>
+
+				<div class="footer-right">
+						<div class="footer-list">
 							<h5>QUIZTECH</h5>
 								<ul>
-									<li> <a class="footer_link" href="" >Sign Up</a></li>										
-									<li><a class="footer_link" href="" >Log In</a></li>
-									<li><a class="footer_link" href="" >Contact</a></li>
-									<li><a class="footer_link" href="" >Our Team</a></li>
-								</ul>	
-							</div>											
-							<div class="footer-list">									
+									<li> <a class="footer_link" href="#" onclick="document.getElementById('id02').style.display='block'" >Sign Up</a></li>
+									<li><a class="footer_link" href="#" onclick="document.getElementById('id01').style.display='block'" >Log In</a></li>
+
+								</ul>
+							</div>
+							<div class="footer-list">
 								<h5>ABOUT</h5>
 								<ul>
-									<li> <a class="footer_link" href="" >Our Team</a></li>										
-									<li><a class="footer_link" href="" >Reports</a></li>
+									<li> <a class="footer_link" href="" >Our Team</a></li>
+									<li><a class="footer_link" href="" >Documents</a></li>
 									<li><a class="footer_link" href="" >Contact</a></li>
 								</ul>
 							</div>
 							<div class="footer-list">
-								<h5>BLOG</h5>
+								<h5>GAME</h5>
 								<ul>
-									<li> <a class="footer_link" href="" >News</a></li>										
-									<li><a class="footer_link" href="" >Support Us</a></li>
+									<li> <a class="footer_link" href="" >Create</a></li>
+									<li><a class="footer_link" href="" > Play</a></li>
 									</ul>
 							</div>
 				</div>
 			<div class="footer-base">
 				<span class="copyright">
 					Copyright &copy; 2020, Quiztech All Rights Reserved.
-				</span>			
+				</span>
 			</div>
 		</div>
-	
+
 	</footer>
 	
 	
@@ -225,6 +351,53 @@ window.onclick = function(event) {
     }
   }
 }
+
+
+
+
+/*
+login script
+*/
+
+// Get the modal
+var modal = document.getElementById('id01');
+var modal2 = document.getElementById('id02');
+var modal3 = document.getElementById('id03');
+var modal4 = document.getElementById('id04');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+	} 
+	if (event.target == modal2) {
+        modal2.style.display = "none";
+	}
+	
+	if (event.target == modal3) {
+		modal3.style.display = "none";
+			
+	}	
+	if (event.target == modal4) {
+		modal4.style.display = "none";
+			
+    }
+}
+
+
+
+
+
+
+/*
+sign up script
+*/
+// Get the modal
+
+// When the user clicks anywhere outside of the modal, close it
+
+
+
 </script>
 	
 </body>
